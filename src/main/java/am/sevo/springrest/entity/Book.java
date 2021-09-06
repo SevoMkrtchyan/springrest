@@ -1,4 +1,4 @@
-package am.sevo.springrest.model;
+package am.sevo.springrest.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,24 +7,19 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
-@Table (name = "author")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "book")
 @Builder
-public class Author {
+public class Book {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
     private String name;
-    @Column
-    private String surname;
-    @Column
-    private int age;
-
+    @ManyToOne
+    private Author author;
 
 }

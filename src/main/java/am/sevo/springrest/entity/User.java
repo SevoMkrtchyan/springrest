@@ -1,4 +1,4 @@
-package am.sevo.springrest.model;
+package am.sevo.springrest.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,17 +17,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column
     private int id;
-    @Column
     private String name;
-    @Column
     private String surname;
-    @Column
     private String email;
-    @Column
     private String password;
-    @Column
     private int age;
 
 }
